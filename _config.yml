@@ -24,7 +24,7 @@ author:
 
 # URL settings
 url: "" #
-baseurl: "blog"
+baseurl: ""
 permalink: /:title/
 google_analytics: # leave it blank if not wish
 fb_appid:
@@ -84,6 +84,7 @@ exclude:
   - lighthouse.png
   - klise-*.gem
   - klise.gemspec
+  - "*.asc"
 
 # Plugins
 plugins:
