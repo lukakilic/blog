@@ -1,0 +1,64 @@
+// Fonts preferences
+$sans-family: Lato, sans-serif;
+$serif-family: Lora, serif;
+$mono-family: Ubuntu Mono, monospace;
+$base-font-size: 16px;
+$medium-font-size: 15px;
+$small-font-size: 14px;
+$base-line-height: 1.85;
+
+// Font weight
+// $light-weight: 300; // uncomment if necessary
+$normal-weight: 400;
+$bold-weight: 700;
+// $black-weight: 900; // uncomment if necessary
+
+//Light Colors
+$text-base-color: #434648;
+$text-link-blue: #003fff;
+$text-link-blue-active: #0036c7;
+
+$black: #0d122b;
+$light: #ececec;
+$smoke: #d2c7c7;
+$gray: #6b7886;
+$white: #fff;
+
+// Dark Colors
+$dark-text-base-color: #BAB8B3;
+$dark-text-link-blue: #E8B146;
+$dark-text-link-blue-active: #FFB82E;
+
+$dark-black: #131417;
+$dark-white: #E5E2DE;
+$dark-light: #1b1d25;
+$dark-smoke: #56514A;
+$dark-gray: #72706D;
+
+// Width of the content area
+$wide-size: 890px;
+$narrow-size: 720px;
+
+// Padding unit
+$spacing-full: 30px;
+$spacing-half: $spacing-full / 2;
+
+// State of devices
+$on-mobile: 768px;
+$on-tablet: 769px;
+$on-desktop: 1024px;
+$on-widescreen: 1152px;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import sass files
+@import "klise/fonts", "klise/base", "klise/layout", "klise/post",
+  "klise/miscellaneous", "klise/syntax", "klise/dark";
