@@ -24,7 +24,7 @@ author:
 
 # URL settings
 url: "" #
-baseurl: ""
+baseurl: "blog"
 permalink: /:title/
 google_analytics: # leave it blank if not wish
 fb_appid:
