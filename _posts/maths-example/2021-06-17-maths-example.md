@@ -3,24 +3,29 @@ layout: post
 title:  Maths Example with Mathjax
 date:   2021-06-16 22:57:49 +0000
 categories: jekyll update
-usemathjax: true
-signature: "https:"
+usemaths: true
 ---
 
 Below is an example of maths using mathjax. 
 
 Any page needing maths should start with the frontmatter:
 
-$$ 
-\begin{align*}
+
+$$
+\begin{aligned}
 y = y(x,t) &= A e^{i\theta} \\
 &= A (\cos \theta + i \sin \theta) \\
 &= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\
 &= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\
 &= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\
 &= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)
-\end{align*}
+\end{aligned}
 $$
+
+$$
+f(x) = \int_{-\infty}^{\infty} e^{-x^2} dx
+$$
+
 
 Inline maths can be written with the `\\(` and `\\)` characters, producing inline maths
 such as \\(\delta(t) \xrightarrow{\mathscr{F}} 1\\).

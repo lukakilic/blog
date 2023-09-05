@@ -81,45 +81,23 @@ layout: compress
     </main>
     <br>
     <hr>
-    <small>This post is signed with my <a href={{site.author.pgp_key}}>PGP Key</a>. To verify the authenticity and
-      integrity of this post, you can download the raw .md and detached signature .asc file.</small>
+    <small>This post is signed with <a href={{site.author.pgp_key}}>my PGP Key</a>. To verify the poat you can download
+      the raw .md and detached (armored) signature .asc file.</small>
     <br>
 
-    <img src="https://img.shields.io/badge/download-.md-E8B146"
-      alt="Download the raw .md file of the post: {{page.title}}" id="download-md" class="download-badge">
+    <img src="https://img.shields.io/badge/raw-.md-E8B146" alt="Download the raw .md file of the post: {{page.title}}"
+      id="download-md" class="download-badge">
     <small>-</small>
-    <img src="https://img.shields.io/badge/download-.asc-E8B146"
+    <img src="https://img.shields.io/badge/signature-.asc-E8B146"
       alt="Download the signature .asc file of the post: {{page.title}}" id="download-asc" class="download-badge">
+    <script src="/assets/js/download.js"></script>
     <script>
-      function initiateDownload(linkId, fileUrl, fileName) {
-        var link = document.getElementById(linkId);
-
-        console.log(link);
-
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          var xhr = new XMLHttpRequest();
-          xhr.open("GET", fileUrl, true);
-          xhr.responseType = "blob";
-
-          xhr.onload = function () {
-            var blob = xhr.response;
-            var downloadLink = document.createElement("a");
-            downloadLink.href = URL.createObjectURL(blob);
-            downloadLink.download = fileName;
-            downloadLink.click();
-          };
-
-          xhr.send();
-        });
-      }
-
       initiateDownload("download-md", "https://raw.githubusercontent.com/lukakilic/blog/main/{{page.path}}", "{{page.path | split: '/' | last}}");
       initiateDownload("download-asc", "https://raw.githubusercontent.com/lukakilic/blog/main/{{page.path}}.asc", "{{page.path | split: '/' | last}}.asc");
     </script>
 
     {% if page.modified %}
+    <br>
     <br>
     <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
     {% endif %}
@@ -129,6 +107,7 @@ layout: compress
 
     {% include footer.html %}
   </div>
+
 </body>
 
 </html>
